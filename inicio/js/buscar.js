@@ -13,14 +13,31 @@ function init(){
     }
 }
 
+function loadEmpleado() {
+    axios.get(url + "/empleado", headers)
+    .then(function(res){
+        console.log(res);
+        displayEmpleado(res.data.message);
+    }).catch(function(err){
+        console.log(err);
+    })
+}
+
+function displayEmpleado(empleado){
+    var body = document.querySelector("body");
+    for(var i = 0; i < empleado.length; i++){
+        body.innerHTML += `<h3>${empleado[i].nombre}</h3>`;
+    }
+}
+
 function buscar(){
-    var idu = document.getElementById('input-id').value;
+    var nom = document.getElementById('input-name').value;
 
     axios({
         method: 'get',
         url: 'http://localhost:3000/empleado/buscar',
         data: {
-            id: idu
+            nombre: nom
         }
     }).then(function(res){
         console.log(res);

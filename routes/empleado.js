@@ -72,7 +72,7 @@ empleado.get('/', async (req, res, next) => {
     res.status(200).json({code: 1, message: emp});
 });
 
-empleado.get('/buscar', async (req, res, next) => {
+empleado.get('/', async (req, res, next) => {
     const id = req.params.id;
     if(id >= 1 && id <= 100){
         const emp = await db.query("SELECT * FROM empleado WHERE id="+id+";");
@@ -83,14 +83,11 @@ empleado.get('/buscar', async (req, res, next) => {
     res.send({code: 404, message: "Empleado no encontrado"});
 });
 
-empleado.get('/:name([A-Za-z]+)', async(req, res, next) =>{
-    const name = req.params.name;
-    const emp = await db.query("SELECT * FROM empleado WHERE nombre='"+name+"';");
-    if(emp.length > 0){
-        return res.json({code: 200, message: emp});
-    }
-    res.status(404);
-    res.send({code: 404, message: "Empleado no encontrado"});
+empleado.get('/buscar', async(req, res, next) =>{
+    const {nombre} = req.body;
+    console.log(nombre);
+    const emp = await db.query("SELECT * FROM empleado");
+    res.status(200).json({code: 1, message: emp});
 });
 
 module.exports = empleado;
