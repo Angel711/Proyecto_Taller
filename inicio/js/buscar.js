@@ -30,7 +30,7 @@ function displayEmpleado(empleado) {
 }
 
 function buscar() {
-    var nom = document.getElementById('input-name').value;
+    var nom = document.getElementById('username').value;
     console.log(nom);
     axios({
         method: 'get',
@@ -39,6 +39,7 @@ function buscar() {
         console.log(res);
         displayEmp(res.data.message);
         alert("Empleado encontrado");
+        init();
     }).catch(function(err) {
         console.log(err);
         alert("Ocurrio un error");
@@ -46,12 +47,16 @@ function buscar() {
 }
 
 function displayEmp(emp) {
-    var info = document.querySelector("#info");
+    var info = document.querySelector(".card");
     for (var i = 0; i < emp.length; i++) {
-        info.innerHTML += `<h3>${emp[i].nombre}</h3>`
-        info.innerHTML += `<h3>${emp[i].apellido}</h3>`
-        info.innerHTML += `<h3>${emp[i].telefono}</h3>`
-        info.innerHTML += `<h3>${emp[i].correo}</h3>`
-        info.innerHTML += `<h3>${emp[i].direccion}</h3>`
+
+        info.innerHTML += `<div class="card-content">
+                            <span class="card-title center">Empleado</span>
+                            <h4 class="flow-text" >Nombre: ${emp[i].nombre}</h4>
+                            <h4 class="flow-text" >Apellido: ${emp[i].apellido}</h4>
+                            <h4 class="flow-text" >Telefono: ${emp[i].telefono}</h4>
+                            <h4 class="flow-text" >Correo: ${emp[i].correo}</h4>
+                            <h4 class="flow-text" >Dirección: ${emp[i].direccion}</h4>
+                        </div>`
     }
 }
