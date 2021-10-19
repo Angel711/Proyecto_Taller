@@ -1,4 +1,4 @@
-window.onload = init;
+/* window.onload = init;
 
 function init(){
     if(localStorage.getItem("token")){
@@ -18,4 +18,4 @@ function init(){
             window.location.href = "buscar.html"
         });
     }
-}
+} */
