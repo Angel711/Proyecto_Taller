@@ -6,43 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Buscar</title>
+    <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/buscar.css">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--¿?-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--Axios-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!---JS-->
     <script src="./js/buscar.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-6 offset-3">
-                <h1>Buscar</h1>
-            </div>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper deep-purple accent-4">
+            <a href="#" class="brand-logo center"> <i class="material-icons">class</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="collapsible.html">Creditos</a></li>
+            </ul>
         </div>
-        <div class="row align-items-center">
-            <div class="col-6 offset-3">
-
-                <div class="form-group">
-                    <label for="input-name">Nombre</label>
-                    <input type="text" class="form-control" id="input-name">
+    </nav>
+     <!-- Login form -->
+     <div class="row section">
+        <div class="col s8 m6 offset-m3">
+            <div class="card">
+                <div class="card-content">         
+                    <span class="card-title center">Buscar</span>
+                    <div class="row">
+                        <div class="input-field col s12 m8 offset-m2">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="username" name="username" type="text">
+                            <label for="username">Nombre Empleado</label>
+                        </div>
+                    </div>
+                    <div class="row center-align">
+                        <button class=" btn waves-effect waves-light deep-purple darken-1 hoverable btn-primary ">
+                            <i class="material-icons right">search</i>Buscar
+                        </button>
+                        <button class=" btn waves-effect waves-light deep-purple darken-1 hoverable btn-secondary ">
+                            <i class="material-icons right">keyboard_backspace</i>Regresar
+                        </button>
+                    </div>        
                 </div>
 
-                <div class="d-flex justify-content-between">
-                    <button class="btn btn-primary">Buscar</button>
-                    <button class="btn btn-secondary">Regresar</button>
-                </div>
-                <div id="info">
-
-                </div>
             </div>
         </div>
     </div>
+
+    <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 

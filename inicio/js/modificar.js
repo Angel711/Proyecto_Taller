@@ -14,12 +14,12 @@ function init(){
 }
 
 function modificar(){
-    var idu = document.getElementById('input-id').value;
-    var nom = document.getElementById('input-nombre').value;
-    var ape = document.getElementById('input-apellido').value;
-    var tel = document.getElementById('input-telefono').value;
-    var cor = document.getElementById('input-correo').value;
-    var dir = document.getElementById('input-direccion').value;
+    var idu = document.getElementById('idU').value;
+    var nom = document.getElementById('username').value;
+    var ape = document.getElementById('lastname').value;
+    var tel = document.getElementById('phone').value;
+    var cor = document.getElementById('email').value;
+    var dir = document.getElementById('address').value;
 
     axios({
         method: 'put',
