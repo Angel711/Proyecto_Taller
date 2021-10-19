@@ -50,13 +50,30 @@ function displayEmp(emp) {
     var info = document.querySelector(".card");
     for (var i = 0; i < emp.length; i++) {
 
-        info.innerHTML += `<div class="card-content">
-                            <span class="card-title center">Empleado</span>
-                            <h4 class="flow-text" >Nombre: ${emp[i].nombre}</h4>
-                            <h4 class="flow-text" >Apellido: ${emp[i].apellido}</h4>
-                            <h4 class="flow-text" >Telefono: ${emp[i].telefono}</h4>
-                            <h4 class="flow-text" >Correo: ${emp[i].correo}</h4>
-                            <h4 class="flow-text" >Dirección: ${emp[i].direccion}</h4>
-                        </div>`
+        info.innerHTML += `<div class="card">
+                                <div class="card-content">
+                                    <span class="card-title center">Empleado</span>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Telefono</th>
+                                            <th>Correo</th>
+                                            <th>Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>${emp[i].nombre}</td>
+                                                <td>${emp[i].apellido}</td>
+                                                <td>${emp[i].telefono}</td>
+                                                <td>${emp[i].correo}</td>
+                                                <td>${emp[i].direccion}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>`
     }
 }
