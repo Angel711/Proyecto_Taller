@@ -1,20 +1,19 @@
 window.onload = init;
 
-function init(){
-    if(localStorage.getItem("token")){
-        document.querySelector('.btn-secondary').addEventListener('click', function(){
+function init() {
+    if (localStorage.getItem("token")) {
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
             window.location.href = "inicio.html"
         });
-    
+
         document.querySelector('.btn-primary').addEventListener('click', eliminar);
-    }
-    else{
+    } else {
         window.location.href = "inicio.html"
     }
 }
 
-function eliminar(){
-    var idu = document.getElementById('input-id').value;
+function eliminar() {
+    var idu = document.getElementById('username').value;
 
     axios({
         method: 'delete',
@@ -22,11 +21,11 @@ function eliminar(){
         data: {
             id: idu
         }
-    }).then(function(res){
+    }).then(function(res) {
         console.log(res);
         alert("Eliminación exitosa");
         window.location.href = "inicio.html"
-    }).catch(function(err){
+    }).catch(function(err) {
         console.log(err);
         alert("Ocurrio un error");
     })

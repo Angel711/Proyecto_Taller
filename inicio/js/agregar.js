@@ -1,24 +1,23 @@
 window.onload = init;
 
-function init(){
-    if(localStorage.getItem("token")){
-        document.querySelector('.btn-secondary').addEventListener('click', function(){
+function init() {
+    if (localStorage.getItem("token")) {
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
             window.location.href = "inicio.html"
         });
-    
+
         document.querySelector('.btn-primary').addEventListener('click', agregar);
-    }
-    else{
+    } else {
         window.location.href = "inicio.html"
     }
 }
 
-function agregar(){
-    var nom = document.getElementById('input-nombre').value;
-    var ape = document.getElementById('input-apellido').value;
-    var tel = document.getElementById('input-telefono').value;
-    var cor = document.getElementById('input-correo').value;
-    var dir = document.getElementById('input-direccion').value;
+function agregar() {
+    var nom = document.getElementById('username').value;
+    var ape = document.getElementById('lastname').value;
+    var tel = document.getElementById('phone').value;
+    var cor = document.getElementById('email').value;
+    var dir = document.getElementById('address').value;
 
     axios({
         method: 'post',
@@ -30,11 +29,11 @@ function agregar(){
             correo: cor,
             direccion: dir
         }
-    }).then(function(res){
+    }).then(function(res) {
         console.log(res);
         alert("Registro exitoso");
         window.location.href = "inicio.html"
-    }).catch(function(err){
+    }).catch(function(err) {
         console.log(err);
         alert("Ocurrio un error");
     })
